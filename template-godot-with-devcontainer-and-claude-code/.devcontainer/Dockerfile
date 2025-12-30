@@ -12,8 +12,13 @@ FROM mcr.microsoft.com/devcontainers/base:debian
 #---------------------------------------------------------------------
 # ⚠️ REMEMBER TO REMOVE THE TRAILING `\` if you comment the next line!
 #---------------------------------------------------------------------
+# fontconfig
+#    Godot 4.x now tries to load system fonts via fontconfig even in headless mode.
+#    Safe to remove, but installing prevents Godot from logging a ton of false positive errors.
+#---------------------------------------------------------------------
 RUN apt-get update \
-    && export DEBIAN_FRONTEND=noninteractive
+    && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends fontconfig
     # && apt-get -y install git
     # && apt-get -y install python3-pip
 

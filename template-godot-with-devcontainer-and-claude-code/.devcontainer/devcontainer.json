@@ -48,28 +48,29 @@
 	//--------------------------------------------------------------------
 	"mounts": [
 		// ~/.bashrc and helpers
-		"source=${localWorkspaceFolder}/.devcontainer/mount/home/.bashrc,target=/home/vscode/.bashrc,type=bind,consistency=cached",
-		"source=${localWorkspaceFolder}/.devcontainer/mount/home/.bashrc__vanilla,target=/home/vscode/.bashrc__vanilla,type=bind,consistency=cached",
-		"source=${localWorkspaceFolder}/.devcontainer/mount/home/.bashrc__custom,target=/home/vscode/.bashrc__custom,type=bind,consistency=cached",
-		"source=${localWorkspaceFolder}/.devcontainer/mount/home/.bashrc__claude_configs,target=/home/vscode/.bashrc__claude_configs,type=bind,consistency=cached",
+		"type=bind,source=${localWorkspaceFolder}/.devcontainer/mount/home/.bashrc,target=/home/vscode/.bashrc,consistency=cached",
+		"type=bind,source=${localWorkspaceFolder}/.devcontainer/mount/home/.bashrc__vanilla,target=/home/vscode/.bashrc__vanilla,consistency=cached",
+		"type=bind,source=${localWorkspaceFolder}/.devcontainer/mount/home/.bashrc__custom,target=/home/vscode/.bashrc__custom,consistency=cached",
+		"type=bind,source=${localWorkspaceFolder}/.devcontainer/mount/home/.bashrc__claude_configs,target=/home/vscode/.bashrc__claude_configs,consistency=cached",
 		
 		// ~/.bash_history
-		"source=${localWorkspaceFolder}/.devcontainer/mount/home/.bash_history,target=/home/vscode/.bash_history,type=bind,consistency=cached",
+		"type=bind,source=${localWorkspaceFolder}/.devcontainer/mount/home/.bash_history,target=/home/vscode/.bash_history,consistency=cached",
 
 		// ---------------------------------------------------------------------------------------------------
 		// <project>/.claude/mount/*   ->   ~/.claude   +   ~/.claude.json   +   ~/.claude.json.backup
 		// ---------------------------------------------------------------------------------------------------
-		"source=${localWorkspaceFolder}/.claude/mount/home/(dot)claude,target=/home/vscode/.claude,type=bind,consistency=cached",
+		"type=bind,source=${localWorkspaceFolder}/.claude/mount/home/(dot)claude,target=/home/vscode/.claude,consistency=cached",
 
 		// ---------------------------------------------------------------------------------------------------
 		// mount Godot binary
 		// ---------------------------------------------------------------------------------------------------
-		"source=${localWorkspaceFolder}/.devcontainer/mount/godot-binary/Godot_v4.5-stable_linux.x86_64,target=/usr/local/bin/godot,type=bind,consistency=cached"
+		// "type=bind,source=${localWorkspaceFolder}/.devcontainer/mount/godot-binary/Godot_v4.5-stable_linux.x86_64,target=/usr/local/bin/godot,consistency=cached",
+		"type=bind,source=${localWorkspaceFolder}/.devcontainer/mount/godot-binary/Godot_v4.5.1-stable_linux.x86_64,target=/usr/local/bin/godot,consistency=cached"
 
 		// ---------------------------------------------------------------------------------------------------
 		// MCP Servers
 		// ---------------------------------------------------------------------------------------------------
-		// "source=${localWorkspaceFolder}/.devcontainer/mount/godot-mcp,target=/opt/godot-mcp,type=bind,consistency=cached",
+		// "type=bind,source=${localWorkspaceFolder}/.devcontainer/mount/godot-mcp,target=/opt/godot-mcp,consistency=cached",
 	],
 
 	// Configure tool-specific properties.
